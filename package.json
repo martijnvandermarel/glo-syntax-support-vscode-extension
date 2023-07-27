@@ -1,0 +1,25 @@
+{
+  "name": "glo-syntax-support",
+  "displayName": "GLO syntax support",
+  "description": "Syntax highlighting for glo files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "glo",
+      "aliases": ["Glo", "glo"],
+      "extensions": [".glo"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "glo",
+      "scopeName": "source.glo",
+      "path": "./syntaxes/glo.tmLanguage.json"
+    }]
+  }
+}
