@@ -2,28 +2,82 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Glo",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+		{"include": "#comments"},
+		{"include": "#variables"},
+		{"include": "#entities"},
+		{"include": "#keywords"},
+		{"include": "#storages"},
+		{"include": "#constants"}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.glo",
-				"match": "\\b(FLOAT|FILE|RASTER|EXTENT)\\b"
-			}]
+		"comments": {
+			"name": "comment.line.number-sign.glo",
+			"begin": "#",
+			"end": "\\n"
 		},
-		"strings": {
-			"name": "string.quoted.double.glo",
-			"begin": "\"",
-			"end": "\"",
+		"variables": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.glo",
-					"match": "\\\\."
+					"contentName": "variable.other.glo",
+					"begin": "\\$",
+					"end": "(;|,|\\n)"
+				},
+				{
+					"name": "variable.parameter.glo",
+					"match": "\\b[a-zA-Z]+\\w*\\s*="
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.function.glo",
+					"match": "\\b[a-zA-Z]+\\w*\\("
+				}
+			]
+		},
+		"meta": {
+			"patterns": [
+				{
+					"name": "meta.function.run.glo",
+					"begin": "BEGIN_RUN\\s.*",
+					"end": "END_RUN\\s.*"
+				}
+			]
+		},
+		"storages": {
+			"patterns": [
+				{
+					"name": "storage.type.type.glo",
+					"match": "\\b(INTEGER|FLOAT|BOOLEAN|STRING|FILE|DIR|RASTER|RASTERLIST|VECTOR|EXTENT|CELLSIZE)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"name": "keyword.control.glo",
+			"match": "\\b(INCLUDE|RUN|RUN_MODULE|RUN_SCENARIO|BEGIN_RUN|END_RUN|LIST|END_LIST)\\b"
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.glo",
+					"match": "\\b(True|False)\\b"
+				},
+				{
+					"name": "constant.language.extent.glo",
+					"match": "\\b(world|europe|wrld|eu|nl)\\b"
+				},
+				{
+					"name": "constant.language.cellsize.glo",
+					"match": "\\b(10deg|1deg|30min|5min|30sec|10sec)\\b"
+				}
+			]
+		},
+		"supports": {
+			"patterns": [
+				{
+					"name": "support.function.msg.glo",
+					"match": "\\bMSG\\("
 				}
 			]
 		}
