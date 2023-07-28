@@ -50,12 +50,16 @@
 				{
 					"name": "storage.type.type.glo",
 					"match": "\\b(INTEGER|FLOAT|BOOLEAN|STRING|FILE|DIR|RASTER|RASTERLIST|VECTOR|EXTENT|CELLSIZE)\\b"
+				},
+				{
+					"name": "storage.type.inout.glo",
+					"match": "\\b(IN|OUT)\\b"
 				}
 			]
 		},
 		"keywords": {
 			"name": "keyword.control.glo",
-			"match": "\\b(INCLUDE|RUN|RUN_MODULE|RUN_SCENARIO|BEGIN_RUN|END_RUN|LIST|END_LIST)\\b"
+			"match": "\\b(INCLUDE|RUN|RUN_MODULE|RUN_SCENARIO|BEGIN_RUN|END_RUN|BEGIN_MODULE|END_MODULE|LIST|END_LIST)\\b"
 		},
 		"constants": {
 			"patterns": [
