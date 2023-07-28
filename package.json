@@ -10,16 +10,32 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "glo",
-      "aliases": ["Glo", "glo"],
-      "extensions": [".glo"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "glo",
-      "scopeName": "source.glo",
-      "path": "./syntaxes/glo.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "glo",
+        "aliases": [
+          "Glo",
+          "glo"
+        ],
+        "extensions": [
+          ".glo"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "glo",
+        "scopeName": "source.glo",
+        "path": "./syntaxes/glo.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.20.0"
+  },
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/martijnvandermarel/glo-syntax-support-vscode-extension"
   }
 }
