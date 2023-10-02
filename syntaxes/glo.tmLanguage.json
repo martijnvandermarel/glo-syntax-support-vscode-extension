@@ -59,7 +59,7 @@
 		},
 		"keywords": {
 			"name": "keyword.control.glo",
-			"match": "\\b(INCLUDE|RUN|RUN_MODULE|RUN_SCENARIO|BEGIN_RUN|END_RUN|BEGIN_MODULE|END_MODULE|LIST|END_LIST)\\b"
+			"match": "\\b(INCLUDE|RUN|RUN_MODULE|RUN_SCENARIO|BEGIN_RUN|END_RUN|BEGIN_MODULE|END_MODULE|BEGIN_SCENARIO|END_SCENARIO|LIST|END_LIST)\\b"
 		},
 		"constants": {
 			"patterns": [
